@@ -52,7 +52,7 @@ dbConn.connect(function(err) {
         infor VARCHAR(255), 
         vigencia DATE NOT NULL,
         foto LONGBLOB,
-        status TINYINT UNSIGNED DEFAULT 0 NOT NULL, 
+        status INT UNSIGNED DEFAULT 0 NOT NULL, 
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )`;
