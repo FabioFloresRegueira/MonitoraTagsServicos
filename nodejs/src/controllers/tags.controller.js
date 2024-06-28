@@ -2,7 +2,7 @@
 const Tags = require('../models/tags');
 
 
-// Controler: Lista todas as Tags de monitoramento de serviços.
+// Controler: Lista todas as Tags de monitoramento de serviços ativas.
 exports.findAll = function(req, res) {
     Tags.findAll(function(err, tags) {
     if (err)
@@ -12,6 +12,56 @@ exports.findAll = function(req, res) {
     });
 };
 
+// Controler: Lista todas as Tags de monitoramento de serviços ativas de 0 a30 dias para o termino da vigencia.
+exports.find0a30 = function(req, res) {
+    Tags.find0a30(function(err, tags) {
+    if (err)
+        res.send(err);
+        console.log('res', tags);
+        res.send(tags);
+    });
+};
+
+// Controler: Lista todas as Tags de monitoramento de serviços ativas de 31 a 60 dias para o termino da vigencia.
+exports.find31a60 = function(req, res) {
+    Tags.find31a60(function(err, tags) {
+    if (err)
+        res.send(err);
+        console.log('res', tags);
+        res.send(tags);
+    });
+};
+
+// Controler: Lista todas as Tags de monitoramento de serviços ativas de 61 a 90 dias para o termino da vigencia.
+exports.find61a90 = function(req, res) {
+    Tags.find61a90(function(err, tags) {
+    if (err)
+        res.send(err);
+        console.log('res', tags);
+        res.send(tags);
+    });
+};
+
+// Controler: Lista todas as Tags de monitoramento de serviços ativas de 61 a 90 dias para o termino da vigencia.
+exports.findmaior90 = function(req, res) {
+    Tags.findmaior90(function(err, tags) {
+    if (err)
+        res.send(err);
+        console.log('res', tags);
+        res.send(tags);
+    });
+};
+
+
+// Controler: Lista todas as Tags de monitoramento de serviços inativos.
+exports.findAllinativos = function(req, res) {
+    Tags.findAllinativos(function(err, tags) {
+    if (err)
+        res.send(err);
+        console.log('res', tags);
+        res.send(tags);
+    });
+};
 
 // Controler: Cria uma Tag de monitoramento de serviço. 
 exports.create = function(req, res) {

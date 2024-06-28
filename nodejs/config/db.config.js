@@ -37,7 +37,7 @@ dbConn.connect(function(err) {
   // código da criação das Tabelas...
 
   /* **************************** 
-  CRIAÇÃO DA TABELA DE CLIENTE   
+  CRIAÇÃO DA TABELA DE TAGS DE MONITORAMENTO DE SERVIÇOS   
   **************************** */
   dbConn.query(" SELECT * FROM information_schema.tables WHERE table_schema = ? AND table_name = ? LIMIT 1", [dbName, 'tags'], function(err, result) {
     if (err) throw err; 
