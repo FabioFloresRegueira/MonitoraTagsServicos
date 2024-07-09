@@ -50,7 +50,7 @@ Tags.findAll = function (result) {
       xSql += 'FROM tags '; 
       xSql += 'WHERE status =1 '; 
       xSql += 'GROUP BY iDTag ';  
-      xSql += 'HAVING DATEDIFF(vigencia, CURDATE()) between 0 and 30 '; 
+      xSql += 'HAVING DATEDIFF(vigencia, CURDATE()) <= 0 and 30 '; 
       xSql += 'OR DATEDIFF(vigencia,CURDATE()) between 31 and 60 ';
       xSql += 'OR DATEDIFF(vigencia,CURDATE()) between 61 and 90 ';  
       xSql += 'OR DATEDIFF(vigencia,CURDATE()) > 90 '; 
